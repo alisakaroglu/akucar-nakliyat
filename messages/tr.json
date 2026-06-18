@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "title": "Akuçar Nakliyat — Ortadoğu Sınır-Ötesi Taşımacılık Uzmanı",
+    "description": "1985'ten beri Lübnan, Suriye ve Ortadoğu hattında uzmanlaşmış uluslararası nakliye. Hatay merkezli köklü taşımacılık."
+  },
+  "nav": {
+    "home": "Anasayfa",
+    "corporate": "Kurumsal",
+    "services": "Hizmetlerimiz",
+    "fleet": "Filo & Galeri",
+    "references": "Referanslar",
+    "contact": "İletişim",
+    "getQuote": "Teklif Al",
+    "team": "Ekip",
+    "news": "Haberler"
+  },
+  "langSwitcher": {
+    "label": "Dil",
+    "tr": "Türkçe",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "hero": {
+    "overline": "1985'TEN BERİ",
+    "title": "Ortadoğu'nun sınır-ötesi taşımacılık uzmanı",
+    "subtitle": "Lübnan, Suriye ve Ortadoğu hattında köklü tecrübe. Hatay'dan yola çıkan güven, sınırların ötesine ulaşır.",
+    "ctaPrimary": "Teklif Al",
+    "ctaSecondary": "Hizmetlerimiz"
+  },
+  "stats": {
+    "years": "Yıllık tecrübe",
+    "routes": "Aktif rota",
+    "deliveries": "Tamamlanan sevkiyat",
+    "fleet": "Araç filosu"
+  },
+  "services": {
+    "overline": "HİZMETLERİMİZ",
+    "title": "Sınırların ötesinde uzmanlık",
+    "lead": "1985'ten bu yana Ortadoğu hattında edindiğimiz tecrübeyle, yükünüzü sınırların ötesine güvenle taşıyoruz.",
+    "lebanon": {
+      "title": "Lübnan Taşımacılık",
+      "desc": "Beyrut hattında düzenli, güvenli sefer."
+    },
+    "syria": {
+      "title": "Suriye Taşımacılık",
+      "desc": "Şam ve ötesine sınır-ötesi uzmanlık."
+    },
+    "middleeast": {
+      "title": "Ortadoğu Taşımacılık",
+      "desc": "Bölge geneline entegre lojistik."
+    },
+    "turkey": {
+      "title": "Türkiye İçi Nakliye",
+      "desc": "Yurt içi parsiyel ve komple taşıma."
+    },
+    "customs": {
+      "title": "Gümrükleme & Aktarma",
+      "desc": "Evrak, gümrük ve aktarma süreçleri tek elden."
+    },
+    "more": "Detay"
+  },
+  "serviceDetail": {
+    "ctaTitle": "Yükünüz için teklif alın",
+    "ctaDesc": "Nereden nereye, yük tipi ve tarih bilgisiyle bize ulaşın; ekibimiz en kısa sürede dönüş yapsın.",
+    "otherTitle": "DİĞER HİZMETLER",
+    "lebanon": {
+      "intro": "Beyrut ve Lübnan geneline düzenli, güvenli ve takip edilebilir taşımacılık.",
+      "body": "Lübnan hattında yılların verdiği yerel bilgi ve güçlü saha ağıyla çalışıyoruz. Sınır geçişlerindeki süreçleri yakından bildiğimiz için yükünüz gecikmeden, eksiksiz ulaşır.",
+      "f1": "Beyrut ve çevresine düzenli sefer planı",
+      "f2": "Sınır ve gümrük süreçlerinde deneyimli ekip",
+      "f3": "Komple ve parsiyel yük seçenekleri",
+      "f4": "Sevkiyat boyunca bilgilendirme"
+    },
+    "syria": {
+      "intro": "Şam ve ötesine, sınır-ötesi taşımacılıkta nadir bulunan köklü uzmanlık.",
+      "body": "Suriye hattı özel uzmanlık ister; evrak, güzergâh ve sınır süreçleri her sevkiyatta titizlikle yönetilir. Akuçar'ın asıl farkı tam da bu hatta yatar.",
+      "f1": "Şam ve bölge geneline taşıma",
+      "f2": "Karmaşık sınır süreçlerinde tecrübe",
+      "f3": "Evrak ve gümrük danışmanlığı",
+      "f4": "Yük güvenliği önceliği"
+    },
+    "middleeast": {
+      "intro": "Ortadoğu geneline entegre, uçtan uca lojistik çözümler.",
+      "body": "Bölgedeki güçlü iş ortaklığı ağımızla, çok ülkeli güzergâhlarda dahi yükünüzü tek elden yönetiyoruz. Planlamadan teslimata kadar tek muhatap.",
+      "f1": "Çok ülkeli güzergâh planlama",
+      "f2": "Tek noktadan koordinasyon",
+      "f3": "Bölgesel iş ortağı ağı",
+      "f4": "Esnek yük çözümleri"
+    },
+    "turkey": {
+      "intro": "Türkiye genelinde parsiyel ve komple yük taşımacılığı.",
+      "body": "Yurt içi sevkiyatlarınızda hız ve güvenliği bir arada sunuyoruz. Hatay merkezimizden ülkenin dört bir yanına düzenli taşıma.",
+      "f1": "Komple ve parsiyel taşıma",
+      "f2": "Yurt geneline düzenli sefer",
+      "f3": "Uygun maliyet planlaması",
+      "f4": "Zamanında teslimat"
+    },
+    "customs": {
+      "intro": "Gümrükleme, evrak ve aktarma süreçlerinin tamamı tek elden.",
+      "body": "İhracat ve ithalat evraklarından gümrük işlemlerine, depo ve aktarma operasyonlarına kadar tüm süreci sizin adınıza yönetiyoruz. Karmaşık bürokrasi bizim işimiz.",
+      "f1": "İhracat/ithalat evrak yönetimi",
+      "f2": "Gümrük işlemleri takibi",
+      "f3": "Depolama ve aktarma",
+      "f4": "Uçtan uca süreç takibi"
+    }
+  },
+  "corporate": {
+    "overline": "KURUMSAL",
+    "title": "1985'ten beri yolun üstünde",
+    "lead": "Ak Uçar Uluslararası Taşımacılık, köklü tecrübesini Ortadoğu hattında uzmanlığa dönüştüren bir aile firmasıdır.",
+    "aboutOverline": "BİZ KİMİZ",
+    "aboutTitle": "Köklü tecrübe, sınır-ötesi uzmanlık",
+    "p1": "1985 yılında Hatay'da yola çıktık. O günden bu yana Lübnan, Suriye ve Ortadoğu hattında binlerce sevkiyatı güvenle tamamladık. Bizi farklı kılan, herkesin gittiği yollarda değil; özel bilgi ve güven isteyen sınır-ötesi hatlarda uzmanlaşmamız.",
+    "p2": "Bugün modern bir filo, deneyimli bir kadro ve güçlü bir bölgesel ağ ile çalışıyoruz. Her yükü kendi yükümüz gibi görür; planlamadan teslimata kadar tek muhatap olarak yanınızda dururuz.",
+    "vision": {
+      "title": "Vizyonumuz",
+      "desc": "Ortadoğu sınır-ötesi taşımacılıkta ilk akla gelen, en güvenilir Türk firması olmak."
+    },
+    "mission": {
+      "title": "Misyonumuz",
+      "desc": "Yükü zamanında, eksiksiz ve güvenle teslim etmek; müşteriye tek muhatap olarak huzur vermek."
+    },
+    "quality": {
+      "title": "Kalite Politikamız",
+      "desc": "Her sevkiyatta aynı titizlik; süreçleri sürekli iyileştirerek standardı yükseltmek."
+    },
+    "hr": {
+      "title": "İnsan Kaynakları",
+      "desc": "Deneyimi genç enerjiyle buluşturan, sahaya hâkim bir ekip kültürü."
+    },
+    "docs": {
+      "overline": "BELGELERİMİZ",
+      "title": "Yetki belgeleri & sertifikalar",
+      "note": "Belgeler temsilidir; güncel belge görselleri talep üzerine paylaşılır.",
+      "items": [
+        {
+          "name": "ISO 9001",
+          "desc": "Kalite yönetim sistemi sertifikası"
+        },
+        {
+          "name": "C2 Yetki Belgesi",
+          "desc": "Uluslararası eşya taşımacılığı yetkisi"
+        },
+        {
+          "name": "ADR",
+          "desc": "Tehlikeli madde taşıma yetkisi"
+        },
+        {
+          "name": "TIR Karnesi",
+          "desc": "Uluslararası transit taşıma belgesi"
+        },
+        {
+          "name": "SRC / Mesleki Yeterlilik",
+          "desc": "Sürücü ve operasyon yeterlilik belgeleri"
+        },
+        {
+          "name": "Yük Sigortası",
+          "desc": "Taşınan yüke yönelik sigorta poliçesi"
+        }
+      ]
+    }
+  },
+  "fleet": {
+    "overline": "FİLO & GALERİ",
+    "title": "Her yüke uygun, modern filo",
+    "lead": "Komple ve parsiyel taşımalardan özel ekipman gerektiren yüklere kadar geniş bir araç parkı.",
+    "typeDesc": "Yük tipinize uygun, bakımlı ve takip edilebilir araçlar.",
+    "note": "Görseller temsilidir. Gerçek filo fotoğrafları yakında eklenecektir.",
+    "types": {
+      "tir": "Tır (Komple)",
+      "frigo": "Frigorifik",
+      "lowbed": "Lowbed",
+      "konteyner": "Konteyner Taşıyıcı",
+      "tenteli": "Tenteli",
+      "parsiyel": "Parsiyel Araç"
+    },
+    "close": "Kapat"
+  },
+  "references": {
+    "overline": "REFERANSLAR",
+    "title": "Bize güvenen markalar",
+    "lead": "Yıllardır birlikte çalıştığımız kurumlar, en büyük referansımızdır.",
+    "note": "Logolar temsilidir. Gerçek müşteri logoları yakında eklenecektir."
+  },
+  "contact": {
+    "overline": "İLETİŞİM",
+    "title": "Yükünüzü konuşalım",
+    "lead": "Teklif, bilgi veya iş birliği için bize ulaşın. En kısa sürede dönüş yapıyoruz.",
+    "formTitle": "Teklif / İletişim Formu",
+    "formDesc": "Formu doldurun; ekibimiz sizinle iletişime geçsin.",
+    "info": {
+      "addressLabel": "Adres",
+      "address": "Antakya / Hatay, Türkiye",
+      "phoneLabel": "Telefon",
+      "phone": "+90 (000) 000 00 00",
+      "emailLabel": "E-posta",
+      "email": "info@akucarnakliyat.com",
+      "hoursLabel": "Çalışma Saatleri",
+      "hours": "Pazartesi – Cumartesi, 08:00 – 18:00"
+    },
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "route": "Güzergâh",
+      "routePlaceholder": "Nereden – Nereye",
+      "message": "Mesajınız",
+      "submit": "Gönder",
+      "success": "Mesajınız alındı. En kısa sürede dönüş yapacağız."
+    },
+    "mapTitle": "Harita — Antakya / Hatay"
+  },
+  "faq": {
+    "overline": "SSS",
+    "title": "Sıkça Sorulan Sorular",
+    "items": [
+      {
+        "q": "Suriye ve Lübnan'a taşıma ne kadar sürer?",
+        "a": "Süre güzergâh, yük tipi ve sınır yoğunluğuna göre değişir. Teklif aşamasında size net bir tahmini süre veriyoruz."
+      },
+      {
+        "q": "Hangi evraklar gerekiyor?",
+        "a": "Yük ve ülkeye göre değişen ihracat/gümrük evrakları gerekir. Tüm evrak sürecinde size danışmanlık veriyoruz."
+      },
+      {
+        "q": "Yüküm sigortalı mı?",
+        "a": "Talebe göre yük sigortası düzenlenir; detayları teklif sırasında netleştiriyoruz."
+      },
+      {
+        "q": "Parsiyel (kısmi) yük taşıyor musunuz?",
+        "a": "Evet. Hem komple hem parsiyel yük seçeneklerimiz mevcuttur."
+      },
+      {
+        "q": "Sevkiyatımı takip edebilir miyim?",
+        "a": "Sevkiyat boyunca düzenli bilgilendirme yapıyoruz; ilgili kişiyle doğrudan iletişimde kalabilirsiniz."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Ortadoğu sınır-ötesi taşımacılığının Hatay'daki köklü uzmanı.",
+    "corporate": "Kurumsal",
+    "services": "Hizmetler",
+    "contact": "İletişim",
+    "newsletter": "Bültene kayıt ol",
+    "newsletterPlaceholder": "E-posta adresiniz",
+    "subscribe": "Kayıt ol",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "common": {
+    "whatsapp": "WhatsApp'tan yazın",
+    "skip": "İçeriğe geç"
+  },
+  "team": {
+    "overline": "EKİP",
+    "title": "İşin başındaki insanlar",
+    "lead": "Sahaya hâkim, deneyimli bir kadro. Yükünüz emin ellerde.",
+    "roles": {
+      "founder": "Kurucu",
+      "gm": "Genel Müdür",
+      "ops": "Operasyon Müdürü",
+      "customs": "Gümrük Uzmanı",
+      "fleet": "Filo Sorumlusu",
+      "sales": "Satış & Müşteri İlişkileri"
+    }
+  },
+  "news": {
+    "overline": "HABERLER",
+    "title": "Haberler & Gelişmeler",
+    "lead": "Akuçar'dan son haberler, sektör gelişmeleri ve duyurular.",
+    "readMore": "Devamını oku",
+    "backToList": "Tüm haberler",
+    "posts": {
+      "suriye-hatti-yeniden": {
+        "title": "Suriye hattında kapasitemizi artırdık",
+        "excerpt": "Artan talebe karşılık Şam ve bölge geneline sefer sıklığımızı yükselttik.",
+        "body": "Artan talebe karşılık Suriye hattındaki kapasitemizi artırdık.\n\nŞam ve bölge geneline yönelik sefer sıklığımızı yükselterek teslim sürelerini kısalttık. Sınır süreçlerindeki deneyimimizle yükleriniz eksiksiz ve zamanında ulaşmaya devam ediyor."
+      },
+      "filo-yenileme": {
+        "title": "Filomuza yeni nesil çekiciler katıldı",
+        "excerpt": "Yakıt verimliliği yüksek, takip sistemli yeni araçlar hizmette.",
+        "body": "Filomuzu yeni nesil çekicilerle güçlendirdik.\n\nYakıt verimliliği yüksek ve gerçek zamanlı takip sistemiyle donatılmış yeni araçlarımız, daha güvenli ve şeffaf bir taşıma deneyimi sunuyor."
+      },
+      "gumruk-surec-hizlandi": {
+        "title": "Gümrük süreçlerinde dijitalleşme",
+        "excerpt": "Evrak yönetimini dijitalleştirerek gümrük bekleme sürelerini azalttık.",
+        "body": "Gümrük süreçlerinde dijitalleşme adımları attık.\n\nEvrak yönetimini dijital ortama taşıyarak gümrük bekleme sürelerini önemli ölçüde azalttık. Müşterilerimiz artık süreçleri daha hızlı ve öngörülebilir biçimde tamamlıyor."
+      }
+    }
+  },
+  "route": {
+    "overline": "ROTALARIMIZ",
+    "title": "Hatay'dan sınırların ötesine",
+    "lead": "Köklü uzmanlığımızın merkezi: Hatay'dan Beyrut ve Şam'a uzanan sınır-ötesi hat.",
+    "stops": {
+      "hatay": "Hatay",
+      "beirut": "Beyrut",
+      "damascus": "Şam"
+    }
+  },
+  "refStrip": {
+    "title": "Bize güvenen kurumlar"
+  },
+  "quote": {
+    "overline": "TEKLİF",
+    "title": "Hızlı teklif alın",
+    "lead": "Birkaç adımda yükünüzü tarif edin; size en uygun teklifle dönelim.",
+    "steps": {
+      "route": "Güzergâh",
+      "cargo": "Yük",
+      "contact": "İletişim"
+    },
+    "from": "Nereden",
+    "fromPlaceholder": "Örn. Hatay",
+    "to": "Nereye",
+    "toPlaceholder": "Örn. Beyrut",
+    "cargo": "Yük tipi",
+    "weight": "Tahmini ağırlık / hacim",
+    "weightPlaceholder": "Örn. 12 ton / 30 m³",
+    "date": "Tahmini tarih",
+    "cargoTypes": {
+      "general": "Genel kargo",
+      "frigo": "Soğuk zincir (frigo)",
+      "heavy": "Ağır / proje yükü",
+      "container": "Konteyner",
+      "other": "Diğer"
+    },
+    "name": "Ad Soyad",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "back": "Geri",
+    "next": "Devam",
+    "submit": "Teklif iste",
+    "successTitle": "Talebiniz alındı",
+    "successDesc": "Ekibimiz en kısa sürede sizinle iletişime geçecek."
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "title": "Akuçar Logistics — Middle East Cross-Border Transport Specialist",
+    "description": "International transport specialized in Lebanon, Syria and the Middle East since 1985. Rooted expertise based in Hatay, Türkiye."
+  },
+  "nav": {
+    "home": "Home",
+    "corporate": "Corporate",
+    "services": "Services",
+    "fleet": "Fleet & Gallery",
+    "references": "References",
+    "contact": "Contact",
+    "getQuote": "Get a Quote",
+    "team": "Team",
+    "news": "News"
+  },
+  "langSwitcher": {
+    "label": "Language",
+    "tr": "Türkçe",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "hero": {
+    "overline": "SINCE 1985",
+    "title": "The Middle East cross-border transport specialist",
+    "subtitle": "Deep-rooted experience across Lebanon, Syria and the Middle East. Trust that departs from Hatay and reaches beyond borders.",
+    "ctaPrimary": "Get a Quote",
+    "ctaSecondary": "Our Services"
+  },
+  "stats": {
+    "years": "Years of experience",
+    "routes": "Active routes",
+    "deliveries": "Completed shipments",
+    "fleet": "Vehicle fleet"
+  },
+  "services": {
+    "overline": "OUR SERVICES",
+    "title": "Expertise beyond borders",
+    "lead": "With experience gathered on the Middle East route since 1985, we carry your cargo safely beyond borders.",
+    "lebanon": {
+      "title": "Lebanon Transport",
+      "desc": "Regular, secure service on the Beirut route."
+    },
+    "syria": {
+      "title": "Syria Transport",
+      "desc": "Cross-border expertise to Damascus and beyond."
+    },
+    "middleeast": {
+      "title": "Middle East Transport",
+      "desc": "Integrated logistics across the region."
+    },
+    "turkey": {
+      "title": "Domestic Transport",
+      "desc": "Partial and full loads within Türkiye."
+    },
+    "customs": {
+      "title": "Customs & Transit",
+      "desc": "Documents, customs and transit handled end-to-end."
+    },
+    "more": "Details"
+  },
+  "serviceDetail": {
+    "ctaTitle": "Request a quote for your cargo",
+    "ctaDesc": "Tell us the origin, destination, cargo type and date; our team will get back to you shortly.",
+    "otherTitle": "OTHER SERVICES",
+    "lebanon": {
+      "intro": "Regular, secure and trackable transport to Beirut and across Lebanon.",
+      "body": "On the Lebanon route we rely on years of local knowledge and a strong field network. Because we know the border processes closely, your cargo arrives complete and on time.",
+      "f1": "Regular schedule to Beirut and surroundings",
+      "f2": "Team experienced in border and customs processes",
+      "f3": "Full and partial load options",
+      "f4": "Updates throughout the shipment"
+    },
+    "syria": {
+      "intro": "Rare, deep-rooted expertise in cross-border transport to Damascus and beyond.",
+      "body": "The Syria route requires special expertise; documents, routing and border processes are managed meticulously for every shipment. This is exactly where Akuçar makes the difference.",
+      "f1": "Transport to Damascus and the wider region",
+      "f2": "Experience with complex border processes",
+      "f3": "Document and customs consultancy",
+      "f4": "Cargo safety as a priority"
+    },
+    "middleeast": {
+      "intro": "Integrated, end-to-end logistics across the Middle East.",
+      "body": "Through our strong network of regional partners, we manage your cargo from a single point even on multi-country routes. One contact from planning to delivery.",
+      "f1": "Multi-country route planning",
+      "f2": "Single-point coordination",
+      "f3": "Regional partner network",
+      "f4": "Flexible cargo solutions"
+    },
+    "turkey": {
+      "intro": "Partial and full load transport across Türkiye.",
+      "body": "For domestic shipments we combine speed and safety. Regular transport from our Hatay base to every corner of the country.",
+      "f1": "Full and partial loads",
+      "f2": "Regular nationwide service",
+      "f3": "Cost-efficient planning",
+      "f4": "On-time delivery"
+    },
+    "customs": {
+      "intro": "Customs, documentation and transit processes handled end-to-end.",
+      "body": "From export and import paperwork to customs procedures, warehousing and transit operations, we manage the entire process on your behalf. Complex bureaucracy is our business.",
+      "f1": "Export/import document management",
+      "f2": "Customs procedure tracking",
+      "f3": "Warehousing and transit",
+      "f4": "End-to-end process tracking"
+    }
+  },
+  "corporate": {
+    "overline": "CORPORATE",
+    "title": "On the road since 1985",
+    "lead": "Ak Uçar International Transport is a family company that has turned its deep-rooted experience into expertise on the Middle East route.",
+    "aboutOverline": "WHO WE ARE",
+    "aboutTitle": "Deep-rooted experience, cross-border expertise",
+    "p1": "We set off in Hatay in 1985. Since then we have safely completed thousands of shipments across Lebanon, Syria and the Middle East. What sets us apart is our focus not on the roads everyone travels, but on the cross-border routes that demand special knowledge and trust.",
+    "p2": "Today we operate with a modern fleet, an experienced team and a strong regional network. We treat every shipment as our own and stand by you as a single point of contact from planning to delivery.",
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To be the first-recalled, most trusted Turkish company in Middle East cross-border transport."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To deliver cargo on time, complete and safe; to give peace of mind as a single point of contact."
+    },
+    "quality": {
+      "title": "Quality Policy",
+      "desc": "The same diligence on every shipment; raising the standard through continuous improvement."
+    },
+    "hr": {
+      "title": "Human Resources",
+      "desc": "A field-savvy team culture that pairs experience with young energy."
+    },
+    "docs": {
+      "overline": "OUR DOCUMENTS",
+      "title": "Permits & certificates",
+      "note": "Documents are representative; current document images are shared on request.",
+      "items": [
+        {
+          "name": "ISO 9001",
+          "desc": "Quality management system certificate"
+        },
+        {
+          "name": "C2 Permit",
+          "desc": "International freight transport authorization"
+        },
+        {
+          "name": "ADR",
+          "desc": "Dangerous goods transport authorization"
+        },
+        {
+          "name": "TIR Carnet",
+          "desc": "International transit transport document"
+        },
+        {
+          "name": "SRC / Competence",
+          "desc": "Driver and operations competence certificates"
+        },
+        {
+          "name": "Cargo Insurance",
+          "desc": "Insurance policy for transported cargo"
+        }
+      ]
+    }
+  },
+  "fleet": {
+    "overline": "FLEET & GALLERY",
+    "title": "A modern fleet for every load",
+    "lead": "A broad vehicle park, from full and partial loads to cargo requiring special equipment.",
+    "typeDesc": "Well-maintained, trackable vehicles suited to your cargo type.",
+    "note": "Images are representative. Real fleet photos will be added soon.",
+    "types": {
+      "tir": "Truck (Full)",
+      "frigo": "Refrigerated",
+      "lowbed": "Lowbed",
+      "konteyner": "Container Carrier",
+      "tenteli": "Curtain-side",
+      "parsiyel": "Partial Load"
+    },
+    "close": "Close"
+  },
+  "references": {
+    "overline": "REFERENCES",
+    "title": "Brands that trust us",
+    "lead": "The organizations we have worked with for years are our greatest reference.",
+    "note": "Logos are representative. Real client logos will be added soon."
+  },
+  "contact": {
+    "overline": "CONTACT",
+    "title": "Let's talk about your cargo",
+    "lead": "Reach out for a quote, information or partnership. We respond as quickly as possible.",
+    "formTitle": "Quote / Contact Form",
+    "formDesc": "Fill in the form and our team will get in touch with you.",
+    "info": {
+      "addressLabel": "Address",
+      "address": "Antakya / Hatay, Türkiye",
+      "phoneLabel": "Phone",
+      "phone": "+90 (000) 000 00 00",
+      "emailLabel": "Email",
+      "email": "info@akucarnakliyat.com",
+      "hoursLabel": "Working Hours",
+      "hours": "Monday – Saturday, 08:00 – 18:00"
+    },
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "route": "Route",
+      "routePlaceholder": "From – To",
+      "message": "Your Message",
+      "submit": "Send",
+      "success": "Your message has been received. We'll get back to you shortly."
+    },
+    "mapTitle": "Map — Antakya / Hatay"
+  },
+  "faq": {
+    "overline": "FAQ",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "How long does transport to Syria and Lebanon take?",
+        "a": "It depends on the route, cargo type and border traffic. We give you a clear estimate at the quote stage."
+      },
+      {
+        "q": "Which documents are required?",
+        "a": "Export/customs documents vary by cargo and country. We advise you throughout the entire paperwork process."
+      },
+      {
+        "q": "Is my cargo insured?",
+        "a": "Cargo insurance is arranged on request; we clarify the details during the quote."
+      },
+      {
+        "q": "Do you carry partial loads?",
+        "a": "Yes. We offer both full and partial load options."
+      },
+      {
+        "q": "Can I track my shipment?",
+        "a": "We provide regular updates throughout the shipment and you can stay in direct contact with the responsible person."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "The deep-rooted specialist in Middle East cross-border transport, based in Hatay.",
+    "corporate": "Corporate",
+    "services": "Services",
+    "contact": "Contact",
+    "newsletter": "Subscribe to our newsletter",
+    "newsletterPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "whatsapp": "Message us on WhatsApp",
+    "skip": "Skip to content"
+  },
+  "team": {
+    "overline": "TEAM",
+    "title": "The people behind the work",
+    "lead": "A field-savvy, experienced team. Your cargo is in safe hands.",
+    "roles": {
+      "founder": "Founder",
+      "gm": "General Manager",
+      "ops": "Operations Manager",
+      "customs": "Customs Specialist",
+      "fleet": "Fleet Manager",
+      "sales": "Sales & Customer Relations"
+    }
+  },
+  "news": {
+    "overline": "NEWS",
+    "title": "News & Updates",
+    "lead": "The latest from Akuçar, industry developments and announcements.",
+    "readMore": "Read more",
+    "backToList": "All news",
+    "posts": {
+      "suriye-hatti-yeniden": {
+        "title": "We increased our capacity on the Syria route",
+        "excerpt": "In response to rising demand, we raised service frequency to Damascus and the wider region.",
+        "body": "We increased our capacity on the Syria route in response to rising demand.\n\nBy raising service frequency to Damascus and the wider region, we shortened delivery times. With our experience in border processes, your cargo continues to arrive complete and on time."
+      },
+      "filo-yenileme": {
+        "title": "New-generation tractor units join our fleet",
+        "excerpt": "Fuel-efficient vehicles with tracking systems are now in service.",
+        "body": "We strengthened our fleet with new-generation tractor units.\n\nEquipped with high fuel efficiency and real-time tracking, our new vehicles offer a safer and more transparent transport experience."
+      },
+      "gumruk-surec-hizlandi": {
+        "title": "Digitalization in customs processes",
+        "excerpt": "By digitalizing document management we reduced customs waiting times.",
+        "body": "We took steps toward digitalization in customs processes.\n\nBy moving document management to a digital environment, we significantly reduced customs waiting times. Our customers now complete processes faster and more predictably."
+      }
+    }
+  },
+  "route": {
+    "overline": "OUR ROUTES",
+    "title": "From Hatay beyond the borders",
+    "lead": "The heart of our deep-rooted expertise: the cross-border line from Hatay to Beirut and Damascus.",
+    "stops": {
+      "hatay": "Hatay",
+      "beirut": "Beirut",
+      "damascus": "Damascus"
+    }
+  },
+  "refStrip": {
+    "title": "Organizations that trust us"
+  },
+  "quote": {
+    "overline": "QUOTE",
+    "title": "Get a fast quote",
+    "lead": "Describe your shipment in a few steps; we'll get back with the best offer.",
+    "steps": {
+      "route": "Route",
+      "cargo": "Cargo",
+      "contact": "Contact"
+    },
+    "from": "From",
+    "fromPlaceholder": "e.g. Hatay",
+    "to": "To",
+    "toPlaceholder": "e.g. Beirut",
+    "cargo": "Cargo type",
+    "weight": "Estimated weight / volume",
+    "weightPlaceholder": "e.g. 12 t / 30 m³",
+    "date": "Estimated date",
+    "cargoTypes": {
+      "general": "General cargo",
+      "frigo": "Cold chain (reefer)",
+      "heavy": "Heavy / project cargo",
+      "container": "Container",
+      "other": "Other"
+    },
+    "name": "Full Name",
+    "phone": "Phone",
+    "email": "Email",
+    "back": "Back",
+    "next": "Continue",
+    "submit": "Request quote",
+    "successTitle": "Request received",
+    "successDesc": "Our team will get in touch with you shortly."
+  }
+}
