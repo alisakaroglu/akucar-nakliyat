@@ -18,7 +18,7 @@ const show = (l?: Loc) => l?.tr || l?.en || l?.ar || "—";
 const toDateInput = (iso?: string | null) => (iso ? iso.slice(0, 10) : "");
 const empty = {
   slug: "", title: {} as Loc, excerpt: {} as Loc, body: {} as Loc,
-  coverImage: "", category: "", publishedAt: "", status: "DRAFT" as const,
+  coverImage: "", category: "", publishedAt: "", status: "DRAFT" as "DRAFT" | "PUBLISHED",
 };
 
 export default function NewsAdminPage() {

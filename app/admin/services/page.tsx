@@ -16,7 +16,7 @@ type Service = {
 
 const show = (l?: Loc) => l?.tr || l?.en || l?.ar || "—";
 const empty = {
-  slug: "", icon: "", order: 0, status: "PUBLISHED" as const,
+  slug: "", icon: "", order: 0, status: "PUBLISHED" as "DRAFT" | "PUBLISHED",
   title: {} as Loc, desc: {} as Loc, intro: {} as Loc, body: {} as Loc, image: "",
 };
 

@@ -14,7 +14,7 @@ type Page = {
 
 const show = (l?: Loc) => l?.tr || l?.en || l?.ar || "—";
 const empty = {
-  slug: "", title: {} as Loc, body: {} as Loc, seoTitle: {} as Loc, seoDesc: {} as Loc, status: "DRAFT" as const,
+  slug: "", title: {} as Loc, body: {} as Loc, seoTitle: {} as Loc, seoDesc: {} as Loc, status: "DRAFT" as "DRAFT" | "PUBLISHED",
 };
 
 export default function PagesAdminPage() {
