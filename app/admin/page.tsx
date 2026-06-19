@@ -23,9 +23,9 @@ export default function DashboardPage() {
   const cards = [
     { key: "quotesNew", label: "Yeni teklif talebi", Icon: Inbox, href: "/admin/quotes", accent: true },
     { key: "messages", label: "Okunmamış mesaj", Icon: Mail, href: "/admin/messages", accent: true },
-    { key: "services", label: "Hizmet", Icon: Truck, href: "/admin/services" },
-    { key: "news", label: "Haber", Icon: Newspaper, href: "/admin/news" },
-    { key: "subscribers", label: "Bülten abonesi", Icon: Users, href: "/admin/subscribers" },
+    { key: "services", label: "Hizmet", Icon: Truck, href: "/admin/services", accent: false },
+    { key: "news", label: "Haber", Icon: Newspaper, href: "/admin/news", accent: false },
+    { key: "subscribers", label: "Bülten abonesi", Icon: Users, href: "/admin/subscribers", accent: false },
   ] as const;
 
   if (isLoading) {
