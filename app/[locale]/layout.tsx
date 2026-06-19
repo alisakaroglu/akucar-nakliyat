@@ -8,6 +8,7 @@ import { fontSans, fontDisplay, fontArabic } from "../fonts";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { getSettings } from "@/lib/content";
 import { PageTransition } from "@/components/layout/PageTransition";
 import "../globals.css";
 
@@ -54,6 +55,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
   const tc = await getTranslations("common");
+  const settings = await getSettings();
   const dir = isRtl(locale) ? "rtl" : "ltr";
 
   return (
@@ -69,8 +71,8 @@ export default async function LocaleLayout({
           <main id="main">
             <PageTransition>{children}</PageTransition>
           </main>
-          <Footer />
-          <WhatsAppButton />
+          <Footer contact={settings.contact} social={settings.social} />
+          <WhatsAppButton phone={settings.contact.whatsapp} />
         </NextIntlClientProvider>
       </body>
     </html>

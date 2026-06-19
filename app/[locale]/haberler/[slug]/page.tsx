@@ -8,7 +8,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { routing } from "@/i18n/routing";
-import { getPost, postSlugs } from "@/lib/news";
+import { postSlugs } from "@/lib/news";
+import { getNewsBySlug } from "@/lib/content";
 import { formatDate } from "@/lib/format";
 
 export function generateStaticParams() {
@@ -18,8 +19,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { locale, slug } }: { params: { locale: string; slug: string } }): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: "news" });
-  return buildMetadata({ locale, title: t(`posts.${slug}.title`), description: t(`posts.${slug}.excerpt`), path: `/haberler/${slug}` });
+  const post = await getNewsBySlug(slug, locale);
+  if (!post) return {};
+  return buildMetadata({ locale, title: post.title, description: post.excerpt, path: `/haberler/${slug}` });
 }
 
 export default async function NewsDetailPage({
@@ -28,23 +30,20 @@ export default async function NewsDetailPage({
   params: { locale: string; slug: string };
 }) {
   setRequestLocale(locale);
-  const post = getPost(slug);
+  const post = await getNewsBySlug(slug, locale);
   if (!post) notFound();
 
   const t = await getTranslations("news");
 
   return (
     <>
-      <PageHeader
-        overline={formatDate(post.date, locale)}
-        title={t(`posts.${slug}.title`)}
-      />
+      <PageHeader overline={formatDate(post.date, locale)} title={post.title} image={post.coverImage || undefined} />
 
       <section className="py-20 md:py-30">
         <Container>
           <Reveal>
             <article className="max-w-prose whitespace-pre-line text-body-lg text-text-muted">
-              {t(`posts.${slug}.body`)}
+              {post.body}
             </article>
           </Reveal>
           <div className="mt-12">

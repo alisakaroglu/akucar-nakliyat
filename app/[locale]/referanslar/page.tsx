@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { images } from "@/lib/images";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { getReferences } from "@/lib/content";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "references" });
@@ -18,9 +20,10 @@ export default async function ReferencesPage({
 }) {
   setRequestLocale(locale);
   const t = await getTranslations("references");
+  const refs = await getReferences(locale);
 
-  // Placeholder logo kutuları — gerçek müşteri logoları panelden/müşteriden gelecek (v2/v3).
-  const logos = Array.from({ length: 12 }, (_, i) => i + 1);
+  // Panelde referans yoksa placeholder logo kutuları gösterilir.
+  const placeholders = Array.from({ length: 12 }, (_, i) => i + 1);
 
   return (
     <>
@@ -29,14 +32,29 @@ export default async function ReferencesPage({
       <section className="py-20 md:py-30">
         <Container>
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border-subtle bg-border-subtle sm:grid-cols-3 lg:grid-cols-4">
-            {logos.map((n) => (
-              <div
-                key={n}
-                className="flex aspect-[3/2] items-center justify-center bg-elevated text-text-faint transition hover:text-text-muted"
-              >
-                <span className="font-display text-h4">LOGO</span>
-              </div>
-            ))}
+            {refs.length > 0
+              ? refs.map((r) => {
+                  const inner = r.logoUrl ? (
+                    <Image src={r.logoUrl} alt={r.name} width={160} height={80} className="max-h-16 w-auto object-contain opacity-80 transition group-hover:opacity-100" />
+                  ) : (
+                    <span className="font-display text-h4 text-text-faint transition group-hover:text-text-muted">{r.name}</span>
+                  );
+                  return r.website ? (
+                    <a key={r.id} href={r.website} target="_blank" rel="noopener noreferrer" className="group flex aspect-[3/2] items-center justify-center bg-elevated p-6">
+                      {inner}
+                    </a>
+                  ) : (
+                    <div key={r.id} className="group flex aspect-[3/2] items-center justify-center bg-elevated p-6">{inner}</div>
+                  );
+                })
+              : placeholders.map((n) => (
+                  <div
+                    key={n}
+                    className="flex aspect-[3/2] items-center justify-center bg-elevated text-text-faint transition hover:text-text-muted"
+                  >
+                    <span className="font-display text-h4">LOGO</span>
+                  </div>
+                ))}
           </div>
           <Reveal>
             <p className="mt-10 max-w-prose text-small text-text-faint">{t("note")}</p>

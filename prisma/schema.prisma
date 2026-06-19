@@ -1,0 +1,232 @@
+// Akuçar Nakliyat — Panel şeması (Faz 2). README planı: Next.js API Routes + Prisma + PostgreSQL.
+// Çok dilli alanlar Json: { "tr": "...", "en": "...", "ar": "..." } (ADR 0001).
+// Onay alınmadan `prisma migrate` / reset ÇALIŞTIRILMAZ.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum QuoteStatus {
+  NEW
+  IN_REVIEW
+  CLOSED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  role         Role     @default(ADMIN)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model MenuItem {
+  id        String     @id @default(cuid())
+  label     Json
+  href      String
+  order     Int        @default(0)
+  visible   Boolean    @default(true)
+  parentId  String?
+  parent    MenuItem?  @relation("MenuChildren", fields: [parentId], references: [id], onDelete: SetNull)
+  children  MenuItem[] @relation("MenuChildren")
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([order])
+}
+
+model Page {
+  id        String        @id @default(cuid())
+  slug      String        @unique
+  title     Json
+  body      Json
+  seoTitle  Json?
+  seoDesc   Json?
+  status    PublishStatus @default(DRAFT)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model Service {
+  id        String        @id @default(cuid())
+  slug      String        @unique
+  icon      String?
+  title     Json
+  desc      Json
+  intro     Json?
+  body      Json?
+  features  Json?
+  image     String?
+  order     Int           @default(0)
+  status    PublishStatus @default(PUBLISHED)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([order])
+}
+
+model NewsPost {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  title       Json
+  excerpt     Json
+  body        Json
+  coverImage  String?
+  category    String?
+  publishedAt DateTime?
+  status      PublishStatus @default(DRAFT)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([publishedAt])
+}
+
+model Reference {
+  id        String   @id @default(cuid())
+  name      Json
+  logoUrl   String?
+  website   String?
+  order     Int      @default(0)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
+model FleetItem {
+  id         String         @id @default(cuid())
+  slug       String         @unique
+  name       Json
+  desc       Json?
+  coverImage String?
+  order      Int            @default(0)
+  visible    Boolean        @default(true)
+  gallery    GalleryImage[]
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+
+  @@index([order])
+}
+
+model GalleryImage {
+  id          String     @id @default(cuid())
+  url         String
+  publicId    String?
+  caption     Json?
+  order       Int        @default(0)
+  fleetItemId String?
+  fleetItem   FleetItem? @relation(fields: [fleetItemId], references: [id], onDelete: SetNull)
+  createdAt   DateTime   @default(now())
+
+  @@index([order])
+}
+
+model HeroSlide {
+  id        String   @id @default(cuid())
+  title     Json
+  subtitle  Json?
+  image     String
+  ctaHref   String?
+  order     Int      @default(0)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
+model Stat {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  label     Json
+  value     Int      @default(0)
+  suffix    String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Faq {
+  id        String   @id @default(cuid())
+  question  Json
+  answer    Json
+  order     Int      @default(0)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  name      String
+  role      Json
+  photoUrl  String?
+  order     Int      @default(0)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  locale    String?
+  createdAt DateTime @default(now())
+}
+
+model QuoteRequest {
+  id        String      @id @default(cuid())
+  fromCity  String?
+  toCity    String?
+  cargoType String?
+  weight    String?
+  date      DateTime?
+  name      String
+  email     String
+  phone     String?
+  message   String?
+  status    QuoteStatus @default(NEW)
+  createdAt DateTime    @default(now())
+
+  @@index([status])
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  route     String?
+  message   String
+  handled   Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model SiteSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  updatedAt DateTime @updatedAt
+}

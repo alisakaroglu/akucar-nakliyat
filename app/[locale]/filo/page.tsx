@@ -5,8 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { images } from "@/lib/images";
 import { FleetGallery } from "@/components/sections/FleetGallery";
-
-const items = ["tir", "frigo", "lowbed", "konteyner", "tenteli", "parsiyel"];
+import { getFleet } from "@/lib/content";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "fleet" });
@@ -21,10 +20,7 @@ export default async function FleetPage({
   setRequestLocale(locale);
   const t = await getTranslations("fleet");
 
-  const gallery = items.map((item) => ({
-    src: images.fleet[item],
-    label: t(`types.${item}`),
-  }));
+  const gallery = (await getFleet(locale)).map((f) => ({ src: f.src, label: f.label }));
 
   return (
     <>

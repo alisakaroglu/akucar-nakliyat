@@ -9,10 +9,24 @@ Her faz tamamlandığında işaretlenir. Tahmini süreler tek geliştirici varsa
 
 ## 📍 Şu an üzerinde çalışılan
 
-**Faz 1.7 — Yayın** ⬜ (başlanacak)
+**Faz 2.5 — Site–Panel Entegrasyonu** ⬜ (deploy planı konuşulacak)
 
-- Sıradaki: Vercel deploy, alan adı bağlama, müşteri onay turu.
-- Açık not: Lighthouse ölçümü makinede yapılacak (sandbox'ta npm yok).
+- 2.1 backend (Prisma + auth + Service CRUD + intake) ve 2.2 güvenlik hazır.
+- ✅ Faz 2.3 tamam: tüm panel modülleri gerçek CRUD (Hizmetler, Filo, Haberler, Hero, İstatistik, Referanslar, Ekip, SSS, Dinamik Sayfalar, Teklifler, Mesajlar, Aboneler, Ayarlar) + medya yükleme.
+- Karar: **Neon/Supabase + Vercel**, kademeli. Güvenli fallback (`lib/content.ts`): DATABASE_URL yoksa/DB hatasında statik → canlı v1 bozulmaz.
+- [x] **Site Ayarları → site**: İletişim sayfası bilgileri, WhatsApp telefonu, footer iletişim+sosyal medya artık panelden (revalidateTag ile anlık tazeleme).
+- [x] **Hizmetler → site**: anasayfa gridi + `/hizmetler` + detay artık DB'den (`getServices`/`getServiceBySlug`, fallback `lib/services`+çeviri, `revalidateTag("services")`).
+- [x] **Haberler → site**: `/haberler` liste + detay DB'den (`getNews`/`getNewsBySlug`, `revalidateTag("news")`).
+- [x] **İstatistikler → site**: anasayfa sayaçları DB'den (`getStats`, `revalidateTag("stats")`).
+- [x] **Ekip → site**: `/ekip` DB'den (`getTeam`, foto varsa next/image, yoksa baş harf; `revalidateTag("team")`).
+- [x] **SSS → site**: İletişim sayfası akordeonu DB'den (`getFaq`, `revalidateTag("faq")`).
+- [x] **Referanslar → site**: `/referanslar` DB'den (`getReferences`; boşsa placeholder logo; `revalidateTag("references")`).
+- [x] **Filo → site**: `/filo` galeri DB'den (`getFleet`, `revalidateTag("fleet")`).
+- [x] **Hero → site**: anasayfa hero ilk görünür slaytı DB'den (`getHero`, `revalidateTag("hero")`); çok-slaytlı carousel v3 cilasına bırakıldı.
+- [x] **Dinamik sayfalar → site**: `app/[locale]/[slug]` panelden oluşturulan yayınlanmış sayfaları render eder (`getPageBySlug`, `revalidateTag("pages")`); statik route'lar öncelikli.
+- [x] **Neon bağlandı (lokal)**: `DATABASE_URL` → Neon Postgres (`akucarnakliyat` şeması), `migrate deploy` + kapsamlı `seed` ile tüm site içeriği 3 dilde DB'de. Panel↔site canlı doğrulandı.
+- Sonraki: **Vercel'e `DATABASE_URL` + `JWT_SECRET` + Cloudinary** ekle → redeploy → prod'da panel→canlı yansıma testi. (Güvenlik: Neon parolasını reset et.)
+- Açık not: DB migrate/seed kullanıcı DB'sinde, onayla. Backend testi için `docs/backend-kurulum.md`.
 
 > Kural: Bu bölümdeki modül dışındaki dosyalara dokunulmaz. Panel/DB (Faz 2) bu fazda yok.
 
@@ -25,7 +39,8 @@ Her faz tamamlandığında işaretlenir. Tahmini süreler tek geliştirici varsa
   referanslar, ekip, haberler liste+detay, iletişim+harita, teklif). Scope: `docs/scope/sayfalar.md`.
 - ✅ **Faz 1.4 — Animasyon** → Reveal, Counter, RouteMap, hover, PageTransition.
 - ✅ **Faz 1.5 (kısmi)** → telifsiz placeholder görseller (`lib/images.ts`).
-- ✅ **Faz 1.6 — Teknik Kalite** → SEO (metadata/OG/sitemap/robots/hreflang, `lib/seo.ts`), a11y (skip-link/aria-current), responsive denetim. Scope: `docs/scope/teknik-kalite.md`.
+- ✅ **Faz 1.6 — Teknik Kalite** → SEO (metadata/OG/sitemap/robots/hreflang, `lib/seo.ts`), a11y, responsive. Scope: `docs/scope/teknik-kalite.md`.
+- ✅ **Faz 1.7 — Yayın** → `DEPLOY.md`; Vercel deploy yapıldı, v1 müşteride. (Alan adı + onay turu açık.)
 
 ---
 
@@ -120,31 +135,35 @@ Her faz tamamlandığında işaretlenir. Tahmini süreler tek geliştirici varsa
 **Amaç:** v1'in içerik yapısına göre, müşterinin kod bilmeden her şeyi yönetebileceği özel panel.
 
 ### 2.1 Backend Altyapısı
-- [ ] PostgreSQL veritabanı kurulumu (Neon / Supabase)
-- [ ] Prisma şema tasarımı (sayfalar, hizmetler, haberler, referanslar, filo, ayarlar)
-- [ ] API Routes (CRUD endpoint'leri)
-- [ ] Cloudinary / UploadThing entegrasyonu (görsel yükleme)
+- [x] PostgreSQL (mevcut DB, şema `akucarnakliyat`) — kurulum `docs/backend-kurulum.md`
+- [x] Prisma şema tasarımı (16 model, JSON i18n) → `prisma/schema.prisma`
+- [~] API Routes — `lib/prisma.ts`, auth (JWT Bearer + bcrypt), Service CRUD + intake (quote/contact/newsletter); kalan içerik tipleri 2.3 deseniyle
+- [x] Medya yükleme — `/api/admin/upload` + `ImageUpload` bileşeni (Cloudinary varsa oraya, yoksa `public/uploads`); tüm form görsel alanlarına entegre
+- [x] seed (`prisma/seed.ts`, idempotent: admin + v1 içerik) — kullanıcı DB'sinde çalıştırılır
 
 ### 2.2 Kimlik Doğrulama & Güvenlik
-- [ ] NextAuth / JWT ile admin girişi
+- [x] JWT (Bearer) ile admin girişi (`/api/auth/login`, bcrypt, premium login ekranı)
 - [ ] Yetkilendirme (admin rolleri)
-- [ ] `/admin` alanının korunması
-- [ ] Form doğrulama & güvenlik (rate limit, sanitizasyon)
+- [x] `/admin` korunması (client guard + her korumalı API'de `requireAdmin`); middleware'den `/admin` hariç
+- [x] Form doğrulama (zod) & rate limit (login + intake)
 
 ### 2.3 Panel Modülleri
 - [ ] **Dinamik Menü Yönetimi** — menü öğesi ekle/sil/düzenle, sürükle-bırak sıralama, tek seviye alt menü, 3 dilde başlık (TR/EN/AR), görünürlük aç/kapa
-- [ ] **Dinamik Sayfa Oluşturma** — panelden yeni sayfa oluştur (başlık, slug, içerik bloğu, görsel, SEO meta), oluşturulan sayfayı menüye bağlama
-- [ ] **Hizmetler & içerik sayfaları** — düzenle, görsel, sıralama
-- [ ] **Haberler / Blog** — oluştur/düzenle/sil, kategori, görsel, tarih
-- [ ] **Referanslar / logolar** — sürükle-bırak sıralama
-- [ ] **Filo / araç parkı + galeri** — görsel yükle/düzenle
+- [x] **Dinamik Sayfa Oluşturma** — `/admin/pages`: 3 dilli başlık/içerik + SEO + durum (public render & menü bağlama 2.5'te)
+- [x] **Hizmetler** — panel CRUD (liste/tablo, 3 dilli modal form, durum/sıra, sil) `/admin/services`
+- [x] **Teklif Talepleri** — `/admin/quotes`: tablo + detay modal + durum (Yeni/İncelemede/Kapandı) + sil
+- [x] **Mesajlar** — `/admin/messages`: liste + okuma modal + okundu işaretle + sil
+- [x] **Genel Bakış (Dashboard)** — özet kartları + son talep/mesajlar (`/admin`)
+- [x] **Haberler / Blog** — `/admin/news`: 3 dilli CRUD (başlık/özet/içerik), slug/kategori/tarih/durum/kapak
+- [x] **Referanslar / logolar** — `/admin/references`: 3 dilli ad, logo/web, sıra, görünür
+- [x] **Filo / araç parkı** — `/admin/fleet`: 3 dilli CRUD (galeri görselleri Cloudinary'den sonra)
 - [ ] **İletişim bilgileri** — adres, telefon, e-posta, harita
-- [ ] **Hero slaytları** — görsel + slogan yönetimi
-- [ ] **İstatistik sayaçları** — sayı güncelleme
-- [ ] **SSS (Sıkça Sorulan Sorular)** — soru/cevap ekle/sil/sırala, 3 dil (gümrük süreleri, evrak, sigorta vb.)
-- [ ] **Ekip / Kadro** — kişi ekle/düzenle (foto, isim, ünvan, kısa açıklama), sıralama
-- [ ] **E-posta bülteni** — abone listesi yönetimi, abone dışa aktarma (CSV), kayıt formu içeriği
-- [ ] **Site ayarları** — logo, sosyal medya, SEO meta
+- [x] **Hero slaytları** — `/admin/hero`: görsel + 3 dilli başlık/slogan, sıra
+- [x] **İstatistik sayaçları** — `/admin/stats`: değer/sonek/etiket
+- [x] **SSS** — `/admin/faq`: soru/cevap 3 dil, sıra, görünür
+- [x] **Ekip / Kadro** — `/admin/team`: isim, ünvan 3 dil, foto, sıra, görünür
+- [x] **E-posta bülteni** — `/admin/subscribers`: liste + CSV dışa aktarma
+- [x] **Site ayarları** — `/admin/settings`: iletişim/sosyal/SEO (canlı siteye bağlama 2.5'te)
 
 > **Dinamik menü + sayfa kuralları (tasarımı korumak için):**
 > - Üst menüde önerilen maksimum öğe sayısı (örn. 6); aşıldığında panel nazik uyarı verir veya fazlası "Daha Fazla" altına toplanır.
@@ -153,15 +172,14 @@ Her faz tamamlandığında işaretlenir. Tahmini süreler tek geliştirici varsa
 > - Dinamik sayfalar Next.js'de tek bir `[slug]` route üzerinden render edilir; içerik veritabanından beslenir (ISR ile anlık güncelleme).
 
 ### 2.4 Panel UX
-- [ ] Temiz, sezgisel panel arayüzü (müşteri dostu)
+- [x] Premium panel kabuğu (sidebar+topbar, dashboard), sinematik login; diğer modüller `Yakında` placeholder
 - [ ] Görsel önizleme (kaydetmeden önce nasıl görüneceği)
-- [ ] Çok dilli içerik girişi (TR/EN/AR aynı panelde)
+- [x] Çok dilli içerik girişi (TR/EN/AR sekmeli `LocalizedInput`)
 - [ ] Otomatik kaydetme / taslak özelliği (opsiyonel)
 
 ### 2.5 Site–Panel Entegrasyonu
-- [ ] Statik içeriği veritabanına taşı
-- [ ] Sayfaları veritabanından besle (ISR / revalidate)
-- [ ] Panel değişikliklerinin canlıya yansıması test
+- [x] Sayfaları veritabanından besle (ISR / `revalidateTag`) — Ayarlar, Hizmetler, Haberler, İstatistik, Ekip, SSS, Referanslar, Filo, Hero, dinamik `[slug]`
+- [ ] Neon/Supabase'e geçiş + Vercel `DATABASE_URL` + panel→canlı yansıma testi
 
 ---
 
@@ -172,12 +190,4 @@ Her faz tamamlandığında işaretlenir. Tahmini süreler tek geliştirici varsa
 - [ ] **Gerçek görseller** — müşterinin filo/proje fotoğraflarını entegre et
 - [ ] Detaylı SEO (anahtar kelime, yapısal veri / schema.org)
 - [ ] Performans ince ayarı (görsel lazy-load, kod bölme)
-- [ ] Analitik kurulumu (Google Analytics / Plausible)
-- [ ] İletişim formu → e-posta entegrasyonu (Resend / SMTP)
-- [ ] WhatsApp / hızlı iletişim butonu
-- [ ] Çok dilli SEO kontrolü (hreflang)
-- [ ] Son güvenlik & yedekleme stratejisi
-- [ ] Müşteriye panel kullanım eğitimi / kısa kılavuz
-
----
-
+- [ ] Analitik kurulumu (Go

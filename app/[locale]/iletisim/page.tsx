@@ -9,6 +9,7 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Accordion } from "@/components/ui/Accordion";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { getSettings, getFaq } from "@/lib/content";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "contact" });
@@ -23,15 +24,17 @@ export default async function ContactPage({
   setRequestLocale(locale);
   const t = await getTranslations("contact");
   const tf = await getTranslations("faq");
+  const { contact } = await getSettings();
 
+  // Değerler panelden (Site Ayarları) gelir; yoksa çeviri varsayılanına düşer.
   const info = [
-    { Icon: MapPin, label: t("info.addressLabel"), value: t("info.address") },
-    { Icon: Phone, label: t("info.phoneLabel"), value: t("info.phone") },
-    { Icon: Mail, label: t("info.emailLabel"), value: t("info.email") },
-    { Icon: Clock, label: t("info.hoursLabel"), value: t("info.hours") },
+    { Icon: MapPin, label: t("info.addressLabel"), value: contact.address || t("info.address") },
+    { Icon: Phone, label: t("info.phoneLabel"), value: contact.phone || t("info.phone") },
+    { Icon: Mail, label: t("info.emailLabel"), value: contact.email || t("info.email") },
+    { Icon: Clock, label: t("info.hoursLabel"), value: contact.hours || t("info.hours") },
   ];
 
-  const faqItems = tf.raw("items") as { q: string; a: string }[];
+  const faqItems = await getFaq(locale);
 
   return (
     <>
