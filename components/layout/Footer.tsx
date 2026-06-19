@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
+import { NewsletterForm } from "@/components/sections/NewsletterForm";
 import type { ContactSettings, SocialSettings } from "@/lib/content";
 
 export function Footer({ contact, social }: { contact?: ContactSettings; social?: SocialSettings }) {
@@ -63,17 +64,7 @@ export function Footer({ contact, social }: { contact?: ContactSettings; social?
 
         <div>
           <h3 className="overline">{t("newsletter")}</h3>
-          <form className="mt-4 flex gap-2">
-            <input
-              type="email"
-              required
-              placeholder={t("newsletterPlaceholder")}
-              className="h-11 w-full rounded-md border border-border-subtle bg-overlay px-3 text-small text-text-primary placeholder:text-text-faint focus:border-accent focus:outline-none"
-            />
-            <button type="submit" className="h-11 shrink-0 rounded-md bg-accent px-4 text-small font-medium text-base transition hover:bg-accent-light">
-              {t("subscribe")}
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </Container>
 

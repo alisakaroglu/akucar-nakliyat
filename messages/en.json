@@ -206,7 +206,9 @@
       "routePlaceholder": "From – To",
       "message": "Your Message",
       "submit": "Send",
-      "success": "Your message has been received. We'll get back to you shortly."
+      "success": "Your message has been received. We'll get back to you shortly.",
+      "error": "Could not send, please try again.",
+      "sending": "Sending…"
     },
     "mapTitle": "Map — Antakya / Hatay"
   },
@@ -244,7 +246,9 @@
     "newsletter": "Subscribe to our newsletter",
     "newsletterPlaceholder": "Your email address",
     "subscribe": "Subscribe",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "newsletterSuccess": "You are subscribed, thank you.",
+    "newsletterError": "Subscription failed, please try again."
   },
   "common": {
     "whatsapp": "Message us on WhatsApp",
@@ -331,6 +335,8 @@
     "next": "Continue",
     "submit": "Request quote",
     "successTitle": "Request received",
-    "successDesc": "Our team will get in touch with you shortly."
+    "successDesc": "Our team will get in touch with you shortly.",
+    "error": "Could not send, please try again.",
+    "sending": "Sending…"
   }
 }

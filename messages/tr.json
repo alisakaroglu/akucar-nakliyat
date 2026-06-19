@@ -206,7 +206,9 @@
       "routePlaceholder": "Nereden – Nereye",
       "message": "Mesajınız",
       "submit": "Gönder",
-      "success": "Mesajınız alındı. En kısa sürede dönüş yapacağız."
+      "success": "Mesajınız alındı. En kısa sürede dönüş yapacağız.",
+      "error": "Gönderilemedi, lütfen tekrar deneyin.",
+      "sending": "Gönderiliyor…"
     },
     "mapTitle": "Harita — Antakya / Hatay"
   },
@@ -244,7 +246,9 @@
     "newsletter": "Bültene kayıt ol",
     "newsletterPlaceholder": "E-posta adresiniz",
     "subscribe": "Kayıt ol",
-    "rights": "Tüm hakları saklıdır."
+    "rights": "Tüm hakları saklıdır.",
+    "newsletterSuccess": "Kaydınız alındı, teşekkürler.",
+    "newsletterError": "Kayıt başarısız, lütfen tekrar deneyin."
   },
   "common": {
     "whatsapp": "WhatsApp'tan yazın",
@@ -331,6 +335,8 @@
     "next": "Devam",
     "submit": "Teklif iste",
     "successTitle": "Talebiniz alındı",
-    "successDesc": "Ekibimiz en kısa sürede sizinle iletişime geçecek."
+    "successDesc": "Ekibimiz en kısa sürede sizinle iletişime geçecek.",
+    "error": "Gönderilemedi, lütfen tekrar deneyin.",
+    "sending": "Gönderiliyor…"
   }
 }

@@ -14,6 +14,8 @@ export function QuoteForm() {
   const t = useTranslations("quote");
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<Status>("form");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState({
     from: "", to: "", cargo: "general", weight: "", date: "",
     name: "", phone: "", email: "",
@@ -30,10 +32,32 @@ export function QuoteForm() {
     "h-11 w-full rounded-md border border-border-subtle bg-overlay px-3 text-body text-text-primary placeholder:text-text-faint focus:border-accent focus:outline-none";
   const label = "mb-2 block text-small text-text-muted";
 
-  function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
-    // Placeholder: gerçek gönderim Faz 3 (Resend/SMTP) / Faz 2 panel API.
-    setStatus("sent");
+    setSubmitting(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fromCity: data.from,
+          toCity: data.to,
+          cargoType: data.cargo,
+          weight: data.weight,
+          date: data.date ? new Date(data.date).toISOString() : "",
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+        }),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("sent");
+    } catch {
+      setError(t("error"));
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (status === "sent") {
@@ -119,6 +143,8 @@ export function QuoteForm() {
         </div>
       )}
 
+      {error && <p className="mt-4 text-small text-danger">{error}</p>}
+
       <div className="mt-8 flex items-center justify-between gap-4">
         {step > 0 ? (
           <button type="button" onClick={() => setStep((s) => s - 1)} className="inline-flex items-center gap-2 text-small text-text-muted hover:text-text-primary">
@@ -133,7 +159,7 @@ export function QuoteForm() {
             <ArrowRight className="h-4 w-4 rtl:rotate-180" />
           </Button>
         ) : (
-          <Button type="submit">{t("submit")}</Button>
+          <Button type="submit" disabled={submitting}>{submitting ? t("sending") : t("submit")}</Button>
         )}
       </div>
     </form>
