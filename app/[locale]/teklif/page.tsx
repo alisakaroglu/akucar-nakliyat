@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { images } from "@/lib/images";
 import { QuoteForm } from "@/components/sections/QuoteForm";
+import { getRoutes } from "@/lib/content";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "quote" });
@@ -18,13 +19,14 @@ export default async function QuotePage({
 }) {
   setRequestLocale(locale);
   const t = await getTranslations("quote");
+  const routes = await getRoutes(locale);
 
   return (
     <>
       <PageHeader overline={t("overline")} title={t("title")} description={t("lead")} image={images.hero} />
       <section className="py-20 md:py-30">
         <Container className="max-w-2xl">
-          <QuoteForm />
+          <QuoteForm routes={routes} />
         </Container>
       </section>
     </>

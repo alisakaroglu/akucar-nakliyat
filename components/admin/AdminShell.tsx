@@ -6,7 +6,7 @@ import { useEffect, type ReactNode } from "react";
 import {
   LayoutDashboard, Truck, Newspaper, FileText, Inbox,
   Mail, Users, Settings, LogOut, Loader2, Building2, HelpCircle,
-  Images, BarChart3, UserPlus,
+  Images, BarChart3, UserPlus, Route as RouteIcon,
 } from "lucide-react";
 import { useAuth } from "./AuthProvider";
 
@@ -14,6 +14,7 @@ const nav = [
   { href: "/admin", label: "Genel Bakış", Icon: LayoutDashboard, exact: true },
   { href: "/admin/services", label: "Hizmetler", Icon: Truck },
   { href: "/admin/fleet", label: "Filo", Icon: Truck },
+  { href: "/admin/routes", label: "Güzergahlar", Icon: RouteIcon },
   { href: "/admin/news", label: "Haberler", Icon: Newspaper },
   { href: "/admin/hero", label: "Hero Slaytları", Icon: Images },
   { href: "/admin/stats", label: "İstatistikler", Icon: BarChart3 },

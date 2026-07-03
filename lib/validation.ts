@@ -35,6 +35,14 @@ export const serviceCreateSchema = z.object({
 
 export const serviceUpdateSchema = serviceCreateSchema.partial();
 
+export const routeCreateSchema = z.object({
+  fromCity: localizedString,
+  toCity: localizedString,
+  order: z.number().int().optional(),
+  visible: z.boolean().optional(),
+});
+export const routeUpdateSchema = routeCreateSchema.partial();
+
 export const quoteSchema = z.object({
   fromCity: z.string().max(120).optional(),
   toCity: z.string().max(120).optional(),

@@ -337,6 +337,8 @@
     "successTitle": "Talebiniz alındı",
     "successDesc": "Ekibimiz en kısa sürede sizinle iletişime geçecek.",
     "error": "Gönderilemedi, lütfen tekrar deneyin.",
-    "sending": "Gönderiliyor…"
+    "sending": "Gönderiliyor…",
+    "routeSelect": "Güzergah",
+    "routeSelectPlaceholder": "Güzergah seçin"
   }
 }

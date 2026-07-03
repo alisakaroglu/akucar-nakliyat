@@ -300,3 +300,22 @@ export async function getPageBySlug(slug: string, locale: string): Promise<Dynam
     } catch { return null; }
   }, ["page", slug, locale], { revalidate: 60, tags: ["pages", `page:${slug}`] })();
 }
+
+// ---------- Güzergahlar (teklif formu) ----------
+export type RouteOption = { id: string; from: string; to: string };
+async function loadRoutes(locale: string): Promise<RouteOption[]> {
+  if (hasDb()) {
+    try {
+      const rows = await prisma.route.findMany({ where: { visible: true }, orderBy: { order: "asc" } });
+      return rows.map((r) => ({
+        id: r.id,
+        from: pickLocale(r.fromCity as LocalizedString, locale),
+        to: pickLocale(r.toCity as LocalizedString, locale),
+      }));
+    } catch { /* düş */ }
+  }
+  return [];
+}
+export async function getRoutes(locale: string): Promise<RouteOption[]> {
+  return unstable_cache(() => loadRoutes(locale), ["routes", locale], { revalidate: 60, tags: ["routes"] })();
+}

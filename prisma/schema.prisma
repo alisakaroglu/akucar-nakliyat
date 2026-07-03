@@ -230,3 +230,16 @@ model SiteSetting {
   value     Json
   updatedAt DateTime @updatedAt
 }
+
+// Teklif formundaki hazır güzergahlar (panelden yönetilir). fromCity/toCity 3 dilli JSON.
+model Route {
+  id        String   @id @default(cuid())
+  fromCity  Json
+  toCity    Json
+  order     Int      @default(0)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}

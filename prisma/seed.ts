@@ -169,6 +169,21 @@ async function main() {
   });
   console.log("Ayarlar: contact + social");
 
+  // 10) Güzergahlar (teklif formu) — deterministik id ile upsert
+  const routes = [
+    { id: "route-1", fromCity: { tr: "Hatay", en: "Hatay", ar: "هاتاي" }, toCity: { tr: "Beyrut", en: "Beirut", ar: "بيروت" } },
+    { id: "route-2", fromCity: { tr: "Hatay", en: "Hatay", ar: "هاتاي" }, toCity: { tr: "Şam", en: "Damascus", ar: "دمشق" } },
+    { id: "route-3", fromCity: { tr: "Hatay", en: "Hatay", ar: "هاتاي" }, toCity: { tr: "Halep", en: "Aleppo", ar: "حلب" } },
+    { id: "route-4", fromCity: { tr: "İstanbul", en: "Istanbul", ar: "إسطنبول" }, toCity: { tr: "Beyrut", en: "Beirut", ar: "بيروت" } },
+    { id: "route-5", fromCity: { tr: "Mersin", en: "Mersin", ar: "مرسين" }, toCity: { tr: "Trablus", en: "Tripoli", ar: "طرابلس" } },
+  ];
+  for (let i = 0; i < routes.length; i++) {
+    const r = routes[i];
+    const data = { fromCity: r.fromCity, toCity: r.toCity, order: i + 1, visible: true };
+    await prisma.route.upsert({ where: { id: r.id }, update: data, create: { id: r.id, ...data } });
+  }
+  console.log(`Güzergahlar: ${routes.length}`);
+
   console.log("Seed tamamlandı — site içeriği DB'ye aktarıldı.");
 }
 

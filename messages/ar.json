@@ -337,6 +337,8 @@
     "successTitle": "تم استلام طلبك",
     "successDesc": "سيتواصل معك فريقنا قريبًا.",
     "error": "تعذّر الإرسال، يرجى المحاولة مرة أخرى.",
-    "sending": "جارٍ الإرسال…"
+    "sending": "جارٍ الإرسال…",
+    "routeSelect": "المسار",
+    "routeSelectPlaceholder": "اختر مساراً"
   }
 }
