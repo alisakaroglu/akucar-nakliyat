@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -39,8 +40,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border-subtle/60 bg-base/80 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between md:h-20">
-        <Link href="/" className="font-display text-h4 font-semibold tracking-tight">
-          AKUÇAR<span className="text-accent">.</span>
+        <Link href="/" className="flex items-center" aria-label="Akuçar Nakliyat">
+          <Image
+            src="/logo-trim.png"
+            alt="Akuçar Nakliyat"
+            width={179}
+            height={34}
+            priority
+            className="h-7 w-auto md:h-8"
+          />
         </Link>
 
         {/* Masaüstü menü */}

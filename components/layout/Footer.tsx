@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
@@ -21,9 +22,13 @@ export function Footer({ contact, social }: { contact?: ContactSettings; social?
     <footer className="border-t border-border-subtle bg-elevated">
       <Container className="grid gap-10 py-16 md:grid-cols-4">
         <div className="md:col-span-1">
-          <div className="font-display text-h4 font-semibold">
-            AKUÇAR<span className="text-accent">.</span>
-          </div>
+          <Image
+            src="/logo-trim.png"
+            alt="Akuçar Nakliyat"
+            width={179}
+            height={34}
+            className="h-8 w-auto"
+          />
           <p className="mt-4 max-w-prose text-small text-text-muted">{t("tagline")}</p>
           {(contact?.address || contact?.phone || contact?.email) && (
             <div className="mt-4 space-y-1 text-small text-text-muted">
