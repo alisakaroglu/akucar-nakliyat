@@ -36,9 +36,14 @@ async function main() {
   const serviceDefs = [
     { slug: "lubnan", key: "lebanon", icon: "Truck", order: 1 },
     { slug: "suriye", key: "syria", icon: "MapPin", order: 2 },
-    { slug: "ortadogu", key: "middleeast", icon: "Globe2", order: 3 },
-    { slug: "turkiye", key: "turkey", icon: "Home", order: 4 },
-    { slug: "gumrukleme", key: "customs", icon: "FileCheck", order: 5 },
+    { slug: "urdun", key: "jordan", icon: "MapPin", order: 3 },
+    { slug: "suudi-arabistan", key: "saudi", icon: "Landmark", order: 4 },
+    { slug: "dubai", key: "dubai", icon: "Building2", order: 5 },
+    { slug: "katar", key: "qatar", icon: "Landmark", order: 6 },
+    { slug: "kuveyt", key: "kuwait", icon: "Navigation", order: 7 },
+    { slug: "ortadogu", key: "middleeast", icon: "Globe2", order: 8 },
+    { slug: "turkiye", key: "turkey", icon: "Home", order: 9 },
+    { slug: "gumrukleme", key: "customs", icon: "FileCheck", order: 10 },
   ];
   for (const s of serviceDefs) {
     const data = {

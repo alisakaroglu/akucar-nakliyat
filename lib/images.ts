@@ -7,12 +7,18 @@ const px = (id: number, w = 1600) =>
 export const images = {
   hero: px(11087837, 1920),
   corporate: px(2199293, 1200),
+  homeAbout: px(2199293, 1200),
   services: {
     lebanon: px(12261472),
     syria: px(13569837),
     middleeast: px(1606957),
     turkey: px(2348359),
     customs: px(14020705),
+    jordan: px(2199293),
+    saudi: px(11087837),
+    dubai: px(1427107),
+    qatar: px(8909442),
+    kuwait: px(2348359),
   } as Record<string, string>,
   fleet: {
     tir: px(11087837),

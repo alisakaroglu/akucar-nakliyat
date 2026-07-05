@@ -26,16 +26,19 @@ export function buildMetadata({
   title,
   description,
   path = "/",
+  keywords,
 }: {
   locale: string;
   title: string;
   description?: string;
   path?: string;
+  keywords?: string[];
 }): Metadata {
   const url = `${SITE_URL}/${locale}${path === "/" ? "" : path}`;
   return {
     title,
     description,
+    ...(keywords && keywords.length ? { keywords } : {}),
     alternates: { canonical: url, languages: languagesFor(path) },
     openGraph: {
       title,

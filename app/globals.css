@@ -4,6 +4,11 @@
 
 /* Token kaynağı: docs/design-system.md §8 — Tailwind config ile senkron. */
 :root {
+  /* Fontlar @fontsource ile gömülü (app/fonts.ts). Tailwind bu değişkenleri kullanır. */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-arabic: "IBM Plex Sans Arabic", Tahoma, sans-serif;
+
   --color-base: #0a0e14;
   --color-elevated: #11161f;
   --color-overlay: #1a212d;

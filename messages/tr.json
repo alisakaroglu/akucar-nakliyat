@@ -12,7 +12,12 @@
     "contact": "İletişim",
     "getQuote": "Teklif Al",
     "team": "Ekip",
-    "news": "Haberler"
+    "news": "Sektörden Haberler",
+    "about": "Biz Kimiz",
+    "vision": "Vizyon ve Misyon",
+    "quality": "Kalite Politikamız",
+    "hr": "İnsan Kaynakları Politikamız",
+    "documents": "Belgelerimiz"
   },
   "langSwitcher": {
     "label": "Dil",
@@ -56,6 +61,26 @@
     "customs": {
       "title": "Gümrükleme & Aktarma",
       "desc": "Evrak, gümrük ve aktarma süreçleri tek elden."
+    },
+    "jordan": {
+      "title": "Ürdün Taşımacılık ve Nakliye",
+      "desc": "Türkiye'den Ürdün'e (Amman) karayolu taşımacılık ve nakliye."
+    },
+    "saudi": {
+      "title": "Suudi Arabistan Taşımacılık ve Nakliye",
+      "desc": "Riyad, Cidde ve Dammam'a taşımacılık ve nakliye çözümleri."
+    },
+    "dubai": {
+      "title": "Dubai Taşımacılık ve Nakliye",
+      "desc": "Türkiye'den Dubai ve BAE geneline taşımacılık ve nakliye."
+    },
+    "qatar": {
+      "title": "Katar Taşımacılık ve Nakliye",
+      "desc": "Türkiye'den Katar ve Doha'ya güvenli taşımacılık ve nakliye."
+    },
+    "kuwait": {
+      "title": "Kuveyt Taşımacılık ve Nakliye",
+      "desc": "Türkiye'den Kuveyt'e karayolu taşımacılık ve nakliye."
     },
     "more": "Detay"
   },
@@ -102,7 +127,53 @@
       "f2": "Gümrük işlemleri takibi",
       "f3": "Depolama ve aktarma",
       "f4": "Uçtan uca süreç takibi"
+    },
+    "jordan": {
+      "intro": "Türkiye'den Ürdün'e; Amman başta olmak üzere komple ve parsiyel karayolu taşımacılığı ve nakliye.",
+      "body": "Ürdün taşımacılık hattında bölgeyi iyi tanıyan ekibimizle düzenli sefer yürütüyoruz. Hatay merkezimizden çıkan yükünüz sınır ve gümrük süreçleri planlı yönetilerek Amman'a güvenle ulaşır. Ürdün nakliye ihtiyaçlarınızda evrak, sigorta ve takip tek elden sağlanır.",
+      "f1": "Türkiye–Ürdün (Amman) düzenli sefer",
+      "f2": "Komple ve parsiyel yük seçenekleri",
+      "f3": "Sınır, gümrük ve evrak süreçleri",
+      "f4": "Sevkiyat boyunca takip ve bilgilendirme"
+    },
+    "saudi": {
+      "intro": "Türkiye'den Suudi Arabistan'a; Riyad, Cidde ve Dammam başta olmak üzere komple ve parsiyel karayolu taşımacılığı.",
+      "body": "Suudi Arabistan taşımacılık hattı, Akuçar'ın güçlü olduğu Körfez güzergâhının merkezinde yer alır. Hatay'dan çıkan yükünüz TIR ve gümrük süreçleri titizlikle yönetilerek Riyad, Cidde ve Dammam'a ulaşır. Suudi Arabistan nakliye operasyonlarında evrak, sigorta ve takip tek muhataptan.",
+      "f1": "Riyad, Cidde, Dammam sefer ağı",
+      "f2": "Komple ve parsiyel taşıma",
+      "f3": "TIR, gümrük ve evrak yönetimi",
+      "f4": "Yük güvenliği ve sevkiyat takibi"
+    },
+    "dubai": {
+      "intro": "Türkiye'den Dubai ve Birleşik Arap Emirlikleri'ne komple ve parsiyel karayolu taşımacılığı; Dubai nakliye süreçlerini uçtan uca yönetiyoruz.",
+      "body": "Dubai taşımacılık hattında düzenli sefer, TIR ve gümrük süreçlerinde deneyimli ekiple çalışıyoruz. Hatay merkezimizden yola çıkan yükünüz, Suudi Arabistan ve Körfez geçişleri dahil planlı bir güzergâhla Dubai'ye ulaşır. Dubai nakliye ihtiyaçlarınızda evrak, sigorta ve takip tek elden.",
+      "f1": "Türkiye–Dubai (BAE) düzenli sefer",
+      "f2": "Komple ve parsiyel yük seçenekleri",
+      "f3": "TIR, gümrük ve evrak yönetimi",
+      "f4": "Sevkiyat boyunca takip ve bilgilendirme"
+    },
+    "qatar": {
+      "intro": "Türkiye'den Katar'a (Doha) komple ve parsiyel karayolu taşımacılığı; Katar nakliye süreçlerinde köklü tecrübe.",
+      "body": "Katar taşımacılık hattında Körfez geçişlerini iyi bilen ekibimizle çalışıyoruz. Hatay'dan çıkan yükünüz Suudi Arabistan transit geçişiyle Doha'ya güvenle ulaşır. Katar nakliye operasyonlarında gümrük, evrak ve sigorta süreçleri tek muhatapla yönetilir.",
+      "f1": "Türkiye–Katar (Doha) sefer planı",
+      "f2": "Körfez transit güzergâh yönetimi",
+      "f3": "Gümrük ve evrak süreçleri",
+      "f4": "Komple/parsiyel ve yük güvenliği"
+    },
+    "kuwait": {
+      "intro": "Türkiye'den Kuveyt'e komple ve parsiyel karayolu taşımacılığı; Kuveyt nakliye ihtiyaçlarınızı uçtan uca yönetiyoruz.",
+      "body": "Kuveyt taşımacılık hattında düzenli sefer ve deneyimli sürücü kadrosuyla çalışıyoruz. Hatay merkezimizden Suudi Arabistan üzerinden Kuveyt'e planlı güzergâh kuruyoruz. Kuveyt nakliye süreçlerinde gümrük, evrak ve takip tek elden sağlanır.",
+      "f1": "Türkiye–Kuveyt düzenli sefer",
+      "f2": "Komple ve parsiyel yük",
+      "f3": "Transit ve gümrük yönetimi",
+      "f4": "Sevkiyat takibi ve bilgilendirme"
     }
+  },
+  "homeAbout": {
+    "overline": "KURUMSAL",
+    "title": "1985'ten beri Ortadoğu'nun güvenilir taşıma çözümü",
+    "body": "Ak Uçar Uluslararası Taşımacılık, 1985'ten bu yana taşımacılık sektörünün içinde olan İbrahim Uçar'ın öncülüğünde Hatay'da kuruldu. Bugün Lübnan, Suriye ve Ortadoğu hattında proje ve komple taşımacılıkta sektörün öne çıkan firmalarından biriyiz.\n\nModern ve genç filomuz, sınır süreçlerine hâkim uzman kadromuz ve yılların getirdiği saha tecrübesiyle yükünüzü zamanında, eksiksiz ve güvenle teslim ediyoruz. Amacımız yalnızca taşımak değil; her sevkiyatta tek muhatap olarak size huzur vermek.\n\nMüşterilerimizin beklentilerini tam karşılamak, istikrarlı kalitemizle değer üretmek ve bölgedeki uzmanlığımızı her geçen gün daha ileri taşımak için çalışıyoruz.",
+    "cta": "Hakkımızda daha fazlası"
   },
   "corporate": {
     "overline": "KURUMSAL",
@@ -240,6 +311,8 @@
   },
   "footer": {
     "tagline": "Ortadoğu sınır-ötesi taşımacılığının Hatay'daki köklü uzmanı.",
+    "location": "Konum",
+    "directions": "Yol tarifi al",
     "corporate": "Kurumsal",
     "services": "Hizmetler",
     "contact": "İletişim",
@@ -268,9 +341,9 @@
     }
   },
   "news": {
-    "overline": "HABERLER",
-    "title": "Haberler & Gelişmeler",
-    "lead": "Akuçar'dan son haberler, sektör gelişmeleri ve duyurular.",
+    "overline": "SEKTÖRDEN HABERLER",
+    "title": "Sektörden Haberler",
+    "lead": "Takip ettiğimiz kaynaklardan lojistik ve nakliye sektörüne dair güncel gelişmeler, duyurular ve Akuçar'dan haberler.",
     "readMore": "Devamını oku",
     "backToList": "Tüm haberler",
     "posts": {
@@ -339,6 +412,7 @@
     "error": "Gönderilemedi, lütfen tekrar deneyin.",
     "sending": "Gönderiliyor…",
     "routeSelect": "Güzergah",
-    "routeSelectPlaceholder": "Güzergah seçin"
+    "routeSelectPlaceholder": "Güzergah seçin",
+    "routeCustom": "Diğer güzergah (kendim yazacağım)"
   }
 }

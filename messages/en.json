@@ -12,7 +12,12 @@
     "contact": "Contact",
     "getQuote": "Get a Quote",
     "team": "Team",
-    "news": "News"
+    "news": "Industry News",
+    "about": "About Us",
+    "vision": "Vision & Mission",
+    "quality": "Quality Policy",
+    "hr": "Human Resources Policy",
+    "documents": "Certificates"
   },
   "langSwitcher": {
     "label": "Language",
@@ -56,6 +61,26 @@
     "customs": {
       "title": "Customs & Transit",
       "desc": "Documents, customs and transit handled end-to-end."
+    },
+    "jordan": {
+      "title": "Jordan Freight & Transport",
+      "desc": "Road freight and transport from Türkiye to Jordan (Amman)."
+    },
+    "saudi": {
+      "title": "Saudi Arabia Freight & Transport",
+      "desc": "Transport and freight to Riyadh, Jeddah and Dammam."
+    },
+    "dubai": {
+      "title": "Dubai Freight & Transport",
+      "desc": "Freight and transport from Türkiye to Dubai and the UAE."
+    },
+    "qatar": {
+      "title": "Qatar Freight & Transport",
+      "desc": "Reliable freight and transport from Türkiye to Qatar and Doha."
+    },
+    "kuwait": {
+      "title": "Kuwait Freight & Transport",
+      "desc": "Road freight and transport from Türkiye to Kuwait."
     },
     "more": "Details"
   },
@@ -102,7 +127,53 @@
       "f2": "Customs procedure tracking",
       "f3": "Warehousing and transit",
       "f4": "End-to-end process tracking"
+    },
+    "jordan": {
+      "intro": "Full and partial road transport and freight from Türkiye to Jordan, notably Amman.",
+      "body": "On the Jordan route we run regular departures with a team that knows the region well. From our Hatay hub your cargo reaches Amman with border and customs processes planned carefully, and documentation, insurance and tracking handled from a single point.",
+      "f1": "Regular Türkiye–Jordan (Amman) departures",
+      "f2": "Full and partial load options",
+      "f3": "Border, customs and documentation",
+      "f4": "Tracking throughout the shipment"
+    },
+    "saudi": {
+      "intro": "Full and partial road transport from Türkiye to Saudi Arabia, notably Riyadh, Jeddah and Dammam.",
+      "body": "The Saudi Arabia route sits at the heart of Akuçar's strong Gulf corridor. Departing Hatay, your cargo reaches Riyadh, Jeddah and Dammam with TIR and customs handled meticulously, and documentation, insurance and tracking from a single contact.",
+      "f1": "Riyadh, Jeddah, Dammam network",
+      "f2": "Full and partial transport",
+      "f3": "TIR, customs and documentation",
+      "f4": "Cargo safety and tracking"
+    },
+    "dubai": {
+      "intro": "Full and partial road transport from Türkiye to Dubai and the United Arab Emirates, managed end to end.",
+      "body": "On the Dubai route we run regular departures with a team experienced in TIR and customs. Departing from our Hatay hub, your cargo reaches Dubai on a planned route via Saudi Arabia and the Gulf, with documentation, insurance and tracking handled from a single point.",
+      "f1": "Regular Türkiye–Dubai (UAE) departures",
+      "f2": "Full and partial load options",
+      "f3": "TIR, customs and documentation",
+      "f4": "Tracking and updates throughout"
+    },
+    "qatar": {
+      "intro": "Full and partial road transport from Türkiye to Qatar (Doha), backed by deep regional experience.",
+      "body": "On the Qatar route we work with a team that knows Gulf transit well. From Hatay your cargo reaches Doha safely via Saudi transit, with customs, documentation and insurance managed by a single contact.",
+      "f1": "Türkiye–Qatar (Doha) schedule",
+      "f2": "Gulf transit route management",
+      "f3": "Customs and documentation",
+      "f4": "Full/partial loads and cargo safety"
+    },
+    "kuwait": {
+      "intro": "Full and partial road transport from Türkiye to Kuwait, managed end to end.",
+      "body": "On the Kuwait route we run regular departures with an experienced driver team. From our Hatay hub we plan the route via Saudi Arabia to Kuwait, handling customs, documentation and tracking from a single point.",
+      "f1": "Regular Türkiye–Kuwait departures",
+      "f2": "Full and partial loads",
+      "f3": "Transit and customs management",
+      "f4": "Shipment tracking and updates"
     }
+  },
+  "homeAbout": {
+    "overline": "CORPORATE",
+    "title": "Your trusted Middle East transport partner since 1985",
+    "body": "Ak Uçar International Transport was founded in Hatay under the lead of İbrahim Uçar, who has been in the transport sector since 1985. Today we are one of the leading companies in project and full-load transport on the Lebanon, Syria and Middle East corridor.\n\nWith a modern, young fleet, an expert team that knows border processes inside out, and decades of field experience, we deliver your cargo on time, complete and secure. Our goal is not merely to carry goods, but to be your single point of contact on every shipment.\n\nWe work to fully meet our customers' expectations, to create value through consistent quality, and to advance our regional expertise further every day.",
+    "cta": "More about us"
   },
   "corporate": {
     "overline": "CORPORATE",
@@ -240,6 +311,8 @@
   },
   "footer": {
     "tagline": "The deep-rooted specialist in Middle East cross-border transport, based in Hatay.",
+    "location": "Location",
+    "directions": "Get directions",
     "corporate": "Corporate",
     "services": "Services",
     "contact": "Contact",
@@ -268,9 +341,9 @@
     }
   },
   "news": {
-    "overline": "NEWS",
-    "title": "News & Updates",
-    "lead": "The latest from Akuçar, industry developments and announcements.",
+    "overline": "INDUSTRY NEWS",
+    "title": "Industry News",
+    "lead": "Current developments in logistics and transport from the sources we follow, plus announcements and news from Akuçar.",
     "readMore": "Read more",
     "backToList": "All news",
     "posts": {
@@ -339,6 +412,7 @@
     "error": "Could not send, please try again.",
     "sending": "Sending…",
     "routeSelect": "Route",
-    "routeSelectPlaceholder": "Select a route"
+    "routeSelectPlaceholder": "Select a route",
+    "routeCustom": "Other route (I'll type it myself)"
   }
 }

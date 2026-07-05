@@ -25,8 +25,9 @@ export function Footer({ contact, social }: { contact?: ContactSettings; social?
             AKUÇAR<span className="text-accent">.</span>
           </div>
           <p className="mt-4 max-w-prose text-small text-text-muted">{t("tagline")}</p>
-          {(contact?.phone || contact?.email) && (
+          {(contact?.address || contact?.phone || contact?.email) && (
             <div className="mt-4 space-y-1 text-small text-text-muted">
+              {contact?.address && <div className="max-w-prose">{contact.address}</div>}
               {contact?.phone && <div>{contact.phone}</div>}
               {contact?.email && <a href={`mailto:${contact.email}`} className="hover:text-text-primary">{contact.email}</a>}
             </div>
@@ -67,6 +68,36 @@ export function Footer({ contact, social }: { contact?: ContactSettings; social?
           <NewsletterForm />
         </div>
       </Container>
+
+      {/* Konum haritası */}
+      <div className="border-t border-border-subtle">
+        <Container className="py-12">
+          <div className="mb-4 flex items-center justify-between gap-4">
+            <h3 className="overline">{t("location")}</h3>
+            <a
+              href="https://maps.app.goo.gl/MY46gVwFxmen9CWw6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-small text-accent hover:underline"
+            >
+              {t("directions")}
+            </a>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-border-subtle">
+            <iframe
+              title="Akuçar Nakliyat — Antakya / Hatay konum haritası"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12875.421839048247!2d36.1616918!3d36.218708!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5a5e8157ccbd1a6e!2zQWt1w6dhciBVbHVzLlRhxZ8uVGljLkx0ZC7FnnRpLg!5e0!3m2!1str!2str!4v1654526969109!5m2!1str!2str"
+              width="100%"
+              height="320"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              className="block w-full"
+            />
+          </div>
+        </Container>
+      </div>
 
       <div className="border-t border-border-subtle">
         <Container className="flex flex-col items-center justify-between gap-2 py-6 text-small text-text-faint md:flex-row">

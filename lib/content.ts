@@ -46,6 +46,35 @@ async function loadSettings(): Promise<SiteSettings> {
 }
 export const getSettings = unstable_cache(loadSettings, ["site-settings"], { revalidate: 60, tags: ["settings"] });
 
+// ---------- Anasayfa Kurumsal Tanıtım (admin: SiteSetting "homeAbout") ----------
+export type HomeAbout = { title: string; body: string; image: string; ctaHref: string };
+
+function fallbackHomeAbout(locale: string): HomeAbout {
+  const m = msgs(locale) as unknown as { homeAbout: { title: string; body: string } };
+  return { title: m.homeAbout.title, body: m.homeAbout.body, image: images.homeAbout, ctaHref: "/kurumsal" };
+}
+async function loadHomeAbout(locale: string): Promise<HomeAbout> {
+  if (hasDb()) {
+    try {
+      const row = await prisma.siteSetting.findUnique({ where: { key: "homeAbout" } });
+      const v = row?.value as { title?: LocalizedString; body?: LocalizedString; image?: string; ctaHref?: string } | undefined;
+      if (v) {
+        const fb = fallbackHomeAbout(locale);
+        return {
+          title: pickLocale((v.title ?? {}) as LocalizedString, locale) || fb.title,
+          body: pickLocale((v.body ?? {}) as LocalizedString, locale) || fb.body,
+          image: v.image || fb.image,
+          ctaHref: v.ctaHref || "/kurumsal",
+        };
+      }
+    } catch { /* düş */ }
+  }
+  return fallbackHomeAbout(locale);
+}
+export async function getHomeAbout(locale: string): Promise<HomeAbout> {
+  return unstable_cache(() => loadHomeAbout(locale), ["home-about", locale], { revalidate: 60, tags: ["settings"] })();
+}
+
 // ---------- Hizmetler ----------
 export type ServiceCard = {
   slug: string; icon: string | null; title: string; desc: string; image: string;
@@ -54,6 +83,7 @@ export type ServiceCard = {
 
 const ICON_BY_SLUG: Record<string, string> = {
   lubnan: "Truck", suriye: "MapPin", ortadogu: "Globe2", turkiye: "Home", gumrukleme: "FileCheck",
+  urdun: "MapPin", "suudi-arabistan": "Landmark", dubai: "Building2", katar: "Landmark", kuveyt: "Navigation",
 };
 
 function fallbackServices(locale: string): ServiceCard[] {
@@ -78,7 +108,7 @@ async function loadServices(locale: string): Promise<ServiceCard[]> {
     try {
       const rows = await prisma.service.findMany({ where: { status: "PUBLISHED" }, orderBy: { order: "asc" } });
       if (rows.length) {
-        return rows.map((r) => ({
+        const dbCards = rows.map((r) => ({
           slug: r.slug,
           icon: r.icon,
           title: pickLocale(r.title as LocalizedString, locale),
@@ -88,6 +118,11 @@ async function loadServices(locale: string): Promise<ServiceCard[]> {
           body: pickLocale(r.body as LocalizedString, locale),
           features: pickLocaleList(r.features as LocalizedList, locale),
         }));
+        // Güvenlik ağı: DB'ye henüz eklenmemiş statik hizmetleri (ör. yeni SEO ülke
+        // sayfaları) sondan tamamla ki sayfalar 404 vermesin. Panelden eklenince DB kazanır.
+        const haveSlugs = new Set(dbCards.map((c) => c.slug));
+        const missing = fallbackServices(locale).filter((c) => !haveSlugs.has(c.slug));
+        return [...dbCards, ...missing];
       }
     } catch {
       // düş

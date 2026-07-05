@@ -96,23 +96,43 @@ export function QuoteForm({ routes = [] }: { routes?: RouteOption[] }) {
 
       {step === 0 && (
         routes.length > 0 ? (
-          <div>
-            <label className={label} htmlFor="route">{t("routeSelect")}</label>
-            <select
-              id="route"
-              className={inputCls}
-              value={routeId}
-              onChange={(e) => {
-                const r = routes.find((x) => x.id === e.target.value);
-                setRouteId(e.target.value);
-                setData((d) => ({ ...d, from: r?.from ?? "", to: r?.to ?? "" }));
-              }}
-            >
-              <option value="">{t("routeSelectPlaceholder")}</option>
-              {routes.map((r) => (
-                <option key={r.id} value={r.id}>{r.from} → {r.to}</option>
-              ))}
-            </select>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="sm:col-span-2">
+              <label className={label} htmlFor="route">{t("routeSelect")}</label>
+              <select
+                id="route"
+                className={inputCls}
+                value={routeId}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  setRouteId(v);
+                  if (v === "custom") {
+                    setData((d) => ({ ...d, from: "", to: "" }));
+                  } else {
+                    const r = routes.find((x) => x.id === v);
+                    setData((d) => ({ ...d, from: r?.from ?? "", to: r?.to ?? "" }));
+                  }
+                }}
+              >
+                <option value="">{t("routeSelectPlaceholder")}</option>
+                {routes.map((r) => (
+                  <option key={r.id} value={r.id}>{r.from} → {r.to}</option>
+                ))}
+                <option value="custom">{t("routeCustom")}</option>
+              </select>
+            </div>
+            {routeId === "custom" && (
+              <>
+                <div>
+                  <label className={label} htmlFor="from">{t("from")}</label>
+                  <input id="from" className={inputCls} value={data.from} onChange={(e) => set("from", e.target.value)} placeholder={t("fromPlaceholder")} />
+                </div>
+                <div>
+                  <label className={label} htmlFor="to">{t("to")}</label>
+                  <input id="to" className={inputCls} value={data.to} onChange={(e) => set("to", e.target.value)} placeholder={t("toPlaceholder")} />
+                </div>
+              </>
+            )}
           </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2">

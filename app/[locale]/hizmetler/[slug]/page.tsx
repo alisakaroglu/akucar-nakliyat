@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE_URL } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Check } from "lucide-react";
@@ -7,8 +7,10 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { serviceJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 import { routing } from "@/i18n/routing";
-import { serviceSlugs } from "@/lib/services";
+import { serviceSlugs, getService } from "@/lib/services";
 import { getServiceBySlug, getServices } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -20,7 +22,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params: { locale, slug } }: { params: { locale: string; slug: string } }): Promise<Metadata> {
   const s = await getServiceBySlug(slug, locale);
   if (!s) return {};
-  return buildMetadata({ locale, title: s.title, description: s.intro, path: `/hizmetler/${slug}` });
+  return buildMetadata({
+    locale,
+    title: s.title,
+    description: s.intro,
+    path: `/hizmetler/${slug}`,
+    keywords: getService(slug)?.keywords,
+  });
 }
 
 export default async function ServiceDetailPage({
@@ -36,8 +44,20 @@ export default async function ServiceDetailPage({
   const tc = await getTranslations("nav");
   const others = (await getServices(locale)).filter((s) => s.slug !== slug);
 
+  const base = `${SITE_URL}/${locale}`;
+
   return (
     <>
+      <JsonLd
+        data={[
+          serviceJsonLd({ locale, title: service.title, description: service.intro, slug }),
+          breadcrumbJsonLd([
+            { name: tc("home"), url: base },
+            { name: tc("services"), url: `${base}/hizmetler` },
+            { name: service.title, url: `${base}/hizmetler/${slug}` },
+          ]),
+        ]}
+      />
       <PageHeader overline={td("otherTitle")} title={service.title} description={service.intro} image={service.image} />
 
       <section className="py-20 md:py-30">

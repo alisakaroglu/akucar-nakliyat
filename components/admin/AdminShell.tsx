@@ -6,12 +6,13 @@ import { useEffect, type ReactNode } from "react";
 import {
   LayoutDashboard, Truck, Newspaper, FileText, Inbox,
   Mail, Users, Settings, LogOut, Loader2, Building2, HelpCircle,
-  Images, BarChart3, UserPlus, Route as RouteIcon,
+  Images, BarChart3, UserPlus, Route as RouteIcon, Home,
 } from "lucide-react";
 import { useAuth } from "./AuthProvider";
 
 const nav = [
   { href: "/admin", label: "Genel Bakış", Icon: LayoutDashboard, exact: true },
+  { href: "/admin/home", label: "Anasayfa Tanıtım", Icon: Home },
   { href: "/admin/services", label: "Hizmetler", Icon: Truck },
   { href: "/admin/fleet", label: "Filo", Icon: Truck },
   { href: "/admin/routes", label: "Güzergahlar", Icon: RouteIcon },
